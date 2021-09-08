@@ -11,11 +11,12 @@ public class AppUsingJavaBasedConfig {
 				CollegeConfiguration.class);
 
 		// Retrieving bean from spring container
-		// symbiosisCollege is method name annotated with @Bean annotation in CollegeConfiguration class
+		// symbiosisCollege is method name annotated with @Bean annotation in CollegeCOnfigut
 		College college = (College) annotationConfigApplicationContext.getBean("symbiosisCollege");
 
 		// Calling methods on bean
 		System.out.println(college.getStreamsOffered());
+		
 
 		// Closing the context
 		annotationConfigApplicationContext.close();
