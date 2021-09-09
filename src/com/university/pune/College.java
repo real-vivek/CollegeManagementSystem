@@ -6,4 +6,6 @@ public interface College {
 
 	public abstract List<String> getStreamsOffered();
 	
+	public abstract String getScholarShipInfo();
+	
 }

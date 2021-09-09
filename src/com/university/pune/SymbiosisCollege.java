@@ -9,6 +9,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class SymbiosisCollege implements College {
 
+	private ScholarShip scholarShip;
+
+	public SymbiosisCollege() {
+		super();
+	}
+
+	public SymbiosisCollege(ScholarShip scholarShip) {
+		this.scholarShip = scholarShip;
+	}
+
 	@Override
 	public List<String> getStreamsOffered() {
 		return new ArrayList<String>() {
@@ -17,5 +27,10 @@ public class SymbiosisCollege implements College {
 				add("Arts");
 			}
 		};
+	}
+
+	@Override
+	public String getScholarShipInfo() {
+		return this.scholarShip.getscholarShipInfo();
 	}
 }

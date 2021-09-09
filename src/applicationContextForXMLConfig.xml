@@ -21,7 +21,11 @@
 
 	<!--Defining our bean here -->
 	<bean id="fc" class="com.university.pune.FergussonCollege">
+	<!-- Constructor dependency injection -->
+	<constructor-arg ref="sportScholarShip"></constructor-arg>
 	</bean>
 	
+	<bean id="sportScholarShip" class="com.university.pune.SportScholarShip"/>
+	<bean id="academicScholarShip" class="com.university.pune.AcademicScholarShip"/>
 
 </beans>
