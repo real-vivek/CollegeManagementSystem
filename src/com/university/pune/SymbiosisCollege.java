@@ -15,10 +15,6 @@ public class SymbiosisCollege implements College {
 		super();
 	}
 
-	public SymbiosisCollege(ScholarShip scholarShip) {
-		this.scholarShip = scholarShip;
-	}
-
 	@Override
 	public List<String> getStreamsOffered() {
 		return new ArrayList<String>() {
@@ -27,6 +23,11 @@ public class SymbiosisCollege implements College {
 				add("Arts");
 			}
 		};
+	}
+	
+	// Setter Method necessary for Setter Dependency Injection
+	public void setScholarShip(ScholarShip scholarShip) {
+		this.scholarShip = scholarShip;
 	}
 
 	@Override

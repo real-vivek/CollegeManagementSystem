@@ -11,6 +11,7 @@ public class FergussonCollege implements College {
 		super();
 	}
 
+	// Constructor necessary for constructor dependency injection
 	public FergussonCollege(ScholarShip scholarShip) {
 		this.scholarShip = scholarShip;
 	}
@@ -26,7 +27,7 @@ public class FergussonCollege implements College {
 			}
 		};
 	}
-
+	
 	@Override
 	public String getScholarShipInfo() {
 		return this.scholarShip.getscholarShipInfo();

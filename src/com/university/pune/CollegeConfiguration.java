@@ -18,4 +18,14 @@ public class CollegeConfiguration {
 	public SymbiosisCollege symbiosisCollege() {
 		return new SymbiosisCollege();
 	}
+	
+	@Bean
+	public SportScholarShip sportScholarShip() {
+		return new SportScholarShip();
+	}
+	
+	@Bean
+	public AcademicScholarShip academicScholarShip() {
+		return new AcademicScholarShip();
+	}
 }

@@ -17,13 +17,20 @@ public class AppUsingXMLConfig {
 		// We can change the class attribute in bean tag present in applicationContextForXMLConfig.xml to have different implementation
 		College college = (College) classPathXmlApplicationContext.getBean("fc");
 		
+		College secondCollege = (College) classPathXmlApplicationContext.getBean("sc");
+		
+		
 		// Calling methods on bean
 		System.out.println(college.getStreamsOffered());
 
 		
-		// Example showing dependency injection using XML configuration
+		// Example showing dependency injection using XML configuration(Constructor Injection)
 		// We can change the implementation of Scholarship interface by changing the ref attribute in constructor-arg tag in applicationContextForXMLConfig.xml
 		System.out.println(college.getScholarShipInfo());
+		
+		// Example showing Dependency Injection using XML Configuration(Setter Injection)
+		// We can change the implementation of Scholarship interface by changing the ref attribute in property tag in applicationContextForXMLConfig.xml
+		System.out.println(secondCollege.getScholarShipInfo());
 		
 		// Closing the context
 		classPathXmlApplicationContext.close();
