@@ -10,13 +10,17 @@ public class CollegeConfiguration {
 	// @Bean tells spring to create a bean for the methods return type
 	@Bean
 	public FergussonCollege fergussonCollege() {
-		return new FergussonCollege();
+		// Example of Constructor dependency injection using Java Configuration
+		return new FergussonCollege(sportScholarShip());
 	}
 
 	// Creating bean for Symbiosis College
 	@Bean
 	public SymbiosisCollege symbiosisCollege() {
-		return new SymbiosisCollege();
+		SymbiosisCollege symbiosisCollege = new SymbiosisCollege();
+		// Example of Setter dependency injection using Java Configuration
+		symbiosisCollege.setScholarShip(academicScholarShip());
+		return symbiosisCollege;
 	}
 	
 	@Bean
