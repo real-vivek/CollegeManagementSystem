@@ -29,7 +29,6 @@
 	
 	<!-- Setter Dependency Injection  -->
 	<property name="scholarShip" ref="academicScholarShip"></property>
-
 	</bean>
 	
 	<bean id="sportScholarShip" class="com.university.pune.SportScholarShip"/>

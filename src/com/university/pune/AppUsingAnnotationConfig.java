@@ -10,10 +10,17 @@ public class AppUsingAnnotationConfig {
 				"applicationContextForAnnotationConfig.xml");
 
 		// Retrieving bean from spring container
-		College bean = (College) classPathXmlApplicationContext.getBean("symbiosisCollege");
+		College collegeBean = (College) classPathXmlApplicationContext.getBean("fergussonCollege");
+		College secondCollegeBean = (College) classPathXmlApplicationContext.getBean("symbiosisCollege");
 
 		// Calling methods on bean
-		System.out.println(bean.getStreamsOffered());
+		System.out.println(collegeBean.getStreamsOffered());
+		
+		// Example of Annotation Dependency Injection with Constructor Dependency Injection
+		System.out.println(collegeBean.getScholarShipInfo());
+		
+		// Example of Annotation Dependency Injection with Setter Dependency Injection
+		System.out.println(secondCollegeBean.getScholarShipInfo());
 
 		// Closing the context
 		classPathXmlApplicationContext.close();

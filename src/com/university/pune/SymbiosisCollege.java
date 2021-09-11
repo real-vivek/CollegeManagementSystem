@@ -3,6 +3,8 @@ package com.university.pune;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 //Using @Component to tell spring to create bean for Annotation Configuration
@@ -26,7 +28,10 @@ public class SymbiosisCollege implements College {
 	}
 	
 	// Setter Method necessary for Setter Dependency Injection
-	public void setScholarShip(ScholarShip scholarShip) {
+	// Using @Autowired Configuration for Annotation Dependency Injection with Setter Injection
+	// Using @Qualifier as there are 2 beans which implement ScholarShip interface
+	@Autowired
+	public void setScholarShip(@Qualifier("academicScholarShip") ScholarShip scholarShip) {
 		this.scholarShip = scholarShip;
 	}
 

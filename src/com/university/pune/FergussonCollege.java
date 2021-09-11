@@ -3,16 +3,24 @@ package com.university.pune;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
 public class FergussonCollege implements College {
 
 	private ScholarShip scholarShip;
-
+	
 	public FergussonCollege() {
 		super();
 	}
 
 	// Constructor necessary for constructor dependency injection
-	public FergussonCollege(ScholarShip scholarShip) {
+	// Using @Autowired Configuration for Annotation Dependency Injection with Constructor Injection
+	// Using @Qualifier as there are 2 beans which implement ScholarShip interface
+	@Autowired
+	public FergussonCollege(@Qualifier("sportScholarShip") ScholarShip scholarShip) {
 		this.scholarShip = scholarShip;
 	}
 

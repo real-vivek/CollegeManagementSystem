@@ -1,5 +1,8 @@
 package com.university.pune;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class SportScholarShip implements ScholarShip {
 
 	@Override
