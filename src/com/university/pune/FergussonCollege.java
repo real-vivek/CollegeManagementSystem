@@ -10,6 +10,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class FergussonCollege implements College {
 
+	// Using @Autowired Configuration for Annotation Dependency Injection with Field Injection
+	// Using @Qualifier as there are 2 beans which implement ScholarShip interface
+	@Autowired
+	@Qualifier("sportScholarShip")
 	private ScholarShip scholarShip;
 	
 	public FergussonCollege() {
@@ -36,6 +40,14 @@ public class FergussonCollege implements College {
 		};
 	}
 	
+	public ScholarShip getScholarShip() {
+		return scholarShip;
+	}
+
+	public void setScholarShip(ScholarShip scholarShip) {
+		this.scholarShip = scholarShip;
+	}
+
 	@Override
 	public String getScholarShipInfo() {
 		return this.scholarShip.getscholarShipInfo();

@@ -11,6 +11,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class SymbiosisCollege implements College {
 
+	// Using @Autowired Configuration for Annotation Dependency Injection with Field Injection
+	// Using @Qualifier as there are 2 beans which implement ScholarShip interface
+	@Autowired
+	@Qualifier("academicScholarShip")
 	private ScholarShip scholarShip;
 
 	public SymbiosisCollege() {
