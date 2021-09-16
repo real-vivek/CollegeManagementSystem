@@ -16,9 +16,17 @@ public class AppUsingXMLConfig {
 		// Instead of below line we can use: College bean = classPathXmlApplicationContext.getBean(College.class,"fc");
 		// We can change the class attribute in bean tag present in applicationContextForXMLConfig.xml to have different implementation
 		College college = (College) classPathXmlApplicationContext.getBean("fc");
+		College collegeBean = (College) classPathXmlApplicationContext.getBean("fc");
+		
+		// Example of singleton scope using XML configuration
+		// The default scope is singleton
+		System.out.println("Both instances of College created using getBean(\"fc\") point to the same instance beacuse college==collegeBean is: " + (college==collegeBean));
 		
 		College secondCollege = (College) classPathXmlApplicationContext.getBean("sc");
+		College secondCollegeBean = (College) classPathXmlApplicationContext.getBean("sc");
 		
+		// Example of prototype scope using XML configuration
+		System.out.println("Both instances of College created using getBean(\"sc\") point to the different instance beacuse secondCollege==secondCollegeBean is: " + (secondCollege==secondCollegeBean));
 		
 		// Calling methods on bean
 		System.out.println(college.getStreamsOffered());

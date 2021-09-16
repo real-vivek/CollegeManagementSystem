@@ -13,9 +13,17 @@ public class AppUsingJavaBasedConfig {
 		// Retrieving bean from spring container
 		// symbiosisCollege is method name annotated with @Bean annotation in CollegeCOnfigut
 		College college = (College) annotationConfigApplicationContext.getBean("fergussonCollege");
-		College secondCollege = (College) annotationConfigApplicationContext.getBean("symbiosisCollege");
+		College collegeBean = (College) annotationConfigApplicationContext.getBean("fergussonCollege");
 		
-
+		// Example of singleton scope using java configuration
+		System.out.println("Both instances of College created using getBean(\"fergussonCollege\") point to the same instance beacuse college==collegeBean is: " + (college==collegeBean));
+		
+		College secondCollege = (College) annotationConfigApplicationContext.getBean("symbiosisCollege");
+		College secondCollegeBean = (College) annotationConfigApplicationContext.getBean("symbiosisCollege");
+		
+		// Example of singleton scope using java configuration
+		System.out.println("Both instances of College created using getBean(\"symbiosisCollege\") point to the different instance beacuse secondCollege==secondCollegeBean is: " + (secondCollege==secondCollegeBean));
+		
 		// Calling methods on bean
 		System.out.println(college.getStreamsOffered());
 		

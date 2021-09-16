@@ -20,12 +20,12 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!--Defining our bean here -->
-	<bean id="fc" class="com.university.pune.FergussonCollege">
+	<bean id="fc" class="com.university.pune.FergussonCollege" scope="singleton">
 	<!-- Constructor dependency injection -->
 	<constructor-arg ref="sportScholarShip"></constructor-arg>
 	</bean>
 	
-	<bean id="sc" class="com.university.pune.SymbiosisCollege">
+	<bean id="sc" class="com.university.pune.SymbiosisCollege" scope="prototype">
 	
 	<!-- Setter Dependency Injection  -->
 	<property name="scholarShip" ref="academicScholarShip"></property>

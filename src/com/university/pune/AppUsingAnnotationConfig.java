@@ -11,8 +11,18 @@ public class AppUsingAnnotationConfig {
 
 		// Retrieving bean from spring container
 		College collegeBean = (College) classPathXmlApplicationContext.getBean("fergussonCollege");
+		College college = (College) classPathXmlApplicationContext.getBean("fergussonCollege");
+		
+		// Example of singleton scope using annotation configuration
+		System.out.println("Both instances of College created using getBean(\"fergussonCollege\") point to the same instance beacuse college==collegeBean is: " + (college==collegeBean));
+		
 		College secondCollegeBean = (College) classPathXmlApplicationContext.getBean("symbiosisCollege");
+		College secondCollege = (College) classPathXmlApplicationContext.getBean("symbiosisCollege");
 
+		// Example of singleton scope using annotation configuration
+		System.out.println("Both instances of College created using getBean(\"symbiosisCollege\") point to the different instance beacuse secondCollege==secondCollegeBean is: " + (secondCollege==secondCollegeBean));
+				
+		
 		// Calling methods on bean
 		System.out.println(collegeBean.getStreamsOffered());
 		

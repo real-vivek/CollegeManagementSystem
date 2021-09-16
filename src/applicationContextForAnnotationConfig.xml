@@ -20,6 +20,6 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- Activating Annotation Configuration by telling spring to scan given package to and create bean of for classes in that package and sub packages-->
-	<context:component-scan base-package="com.university.pune"></context:component-scan>
+	<context:component-scan base-package="com.university.pune"></context:component-scan> 
 
 </beans>
