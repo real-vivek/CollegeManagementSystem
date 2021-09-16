@@ -54,5 +54,17 @@ public class FergussonCollege implements College {
 	public String getScholarShipInfo() {
 		return this.scholarShip.getscholarShipInfo();
 	}
+	
+	// Example of init-method using xml config
+	// It is be executed only once even though getBean is called any number of times because scope is singleton
+	public void initiMethod() {
+		System.out.println("From init-method in FergussonCollege");
+	}
+	
+	// Example of destroy-method using xml config
+	// Called before JVM is closed we need to have appContext.close()
+	public void destoryMethod(){
+		System.out.println("From destroy-method in FergussonCollege");
+	}
 
 }
