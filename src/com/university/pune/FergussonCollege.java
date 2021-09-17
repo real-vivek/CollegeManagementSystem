@@ -57,6 +57,7 @@ public class FergussonCollege implements College {
 	
 	// Example of init-method using xml config
 	// It is be executed only once even though getBean is called any number of times because scope is singleton
+	// init-method is called after the properties are set by spring container
 	public void initiMethod() {
 		System.out.println("From init-method in FergussonCollege");
 	}
