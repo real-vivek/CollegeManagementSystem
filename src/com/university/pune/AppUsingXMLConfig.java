@@ -31,7 +31,6 @@ public class AppUsingXMLConfig {
 		// Calling methods on bean
 		System.out.println(college.getStreamsOffered());
 
-		
 		// Example showing dependency injection using XML configuration(Constructor Injection)
 		// We can change the implementation of Scholarship interface by changing the ref attribute in constructor-arg tag in applicationContextForXMLConfig.xml
 		System.out.println(college.getScholarShipInfo());
