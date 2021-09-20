@@ -22,7 +22,6 @@ public class AcademicScholarShip implements ScholarShip, InitializingBean, Dispo
 	@Override
 	public void afterPropertiesSet() throws Exception {
 		System.out.println("From afterPropertiesSet method in AcademicSholarShip");
-
 	}
 
 }

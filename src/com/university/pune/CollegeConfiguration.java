@@ -35,4 +35,9 @@ public class CollegeConfiguration {
 	public AcademicScholarShip academicScholarShip() {
 		return new AcademicScholarShip();
 	}
+	
+	@Bean
+	public InitBean initBean() {
+		return new InitBean();
+	}
 }
