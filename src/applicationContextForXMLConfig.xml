@@ -34,4 +34,6 @@
 	<bean id="sportScholarShip" class="com.university.pune.SportScholarShip"/>
 	<bean id="academicScholarShip" class="com.university.pune.AcademicScholarShip"/>
 
+	<bean class="com.university.pune.InitBean"/> 
+
 </beans>
