@@ -23,6 +23,5 @@ public class SportScholarShip implements ScholarShip {
 	@PreDestroy
 	public void destroyMethod() {
 		System.out.println("From pre-destroy method in SpostScholarShip");
-
 	}
 }

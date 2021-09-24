@@ -35,5 +35,9 @@
 	<bean id="academicScholarShip" class="com.university.pune.AcademicScholarShip"/>
 
 	<bean class="com.university.pune.InitBean"/> 
+	<bean class="com.university.pune.DeanPostFactoryBeanProcessor"/> 
 
+	<bean id="dean" class="com.university.pune.Dean">
+	<property name="deanName" value="Dean name from xml config"></property>
+	</bean> 
 </beans>

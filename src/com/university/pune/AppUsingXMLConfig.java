@@ -38,6 +38,10 @@ public class AppUsingXMLConfig {
 		// Example showing Dependency Injection using XML Configuration(Setter Injection)
 		// We can change the implementation of Scholarship interface by changing the ref attribute in property tag in applicationContextForXMLConfig.xml
 		System.out.println(secondCollege.getScholarShipInfo());
+
+		Dean dean = (Dean) classPathXmlApplicationContext.getBean("dean");
+		// Example of BeanFactoryPostProcessor using
+		System.out.println(dean.getDeanName());
 		
 		// Closing the context
 		classPathXmlApplicationContext.close();
