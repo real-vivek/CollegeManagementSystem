@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- 
-	xmlns=> You need the main bean namespace since you are using XML to 
-	define your bean definitions 
-	
-	xmlns:context=> You need the context namespace 
-	since you are using it to define <context:annotation-config /> 
-	
-	xmlns:xsi=> 
+<!-- xmlns=> You need the main bean namespace since you are using XML to 
+	define your bean definitions xmlns:context=> You need the context namespace 
+	since you are using it to define <context:annotation-config /> xmlns:xsi=> 
 	Declares a standard namespace prefix (xsi) for a core namespace used in XSD 
-	
 	xsi:schemaLocation=> Provide hints to the XML processor as to how to associate 
-	an XSD with an XML document 
--->
+	an XSD with an XML document -->
 
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -20,24 +13,36 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!--Defining our bean here -->
-	<bean id="fc" class="com.university.pune.FergussonCollege" scope="singleton" init-method="initiMethod" destroy-method="destoryMethod">
-	<!-- Constructor dependency injection -->
-	<constructor-arg ref="sportScholarShip"></constructor-arg>
+	<bean id="fc" class="com.university.pune.FergussonCollege"
+		scope="singleton" init-method="initiMethod"
+		destroy-method="destoryMethod">
+		<!-- Constructor dependency injection -->
+		<constructor-arg ref="sportScholarShip"></constructor-arg>
 	</bean>
-	
-	<bean id="sc" class="com.university.pune.SymbiosisCollege" scope="prototype">
-	
-	<!-- Setter Dependency Injection  -->
-	<property name="scholarShip" ref="academicScholarShip"></property>
-	</bean>
-	
-	<bean id="sportScholarShip" class="com.university.pune.SportScholarShip"/>
-	<bean id="academicScholarShip" class="com.university.pune.AcademicScholarShip"/>
 
-	<bean class="com.university.pune.InitBean"/> 
-	<bean class="com.university.pune.DeanPostFactoryBeanProcessor"/> 
+	<bean id="sc" class="com.university.pune.SymbiosisCollege"
+		scope="prototype">
+
+		<!-- Setter Dependency Injection -->
+		<property name="scholarShip" ref="academicScholarShip"></property>
+	</bean>
+
+	<bean id="sportScholarShip"
+		class="com.university.pune.SportScholarShip" />
+	<bean id="academicScholarShip"
+		class="com.university.pune.AcademicScholarShip" />
+
+	<bean class="com.university.pune.InitBean" />
+	<bean class="com.university.pune.DeanPostFactoryBeanProcessor" />
 
 	<bean id="dean" class="com.university.pune.Dean">
-	<property name="deanName" value="Dean name from xml config"></property>
-	</bean> 
+		<property name="deanName" value="${dean.name}"></property>
+	</bean>
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations" value="message.properties"></property>
+
+	</bean>
+
 </beans>
