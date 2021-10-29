@@ -33,6 +33,10 @@ public class AppUsingJavaBasedConfig {
 		// Example of Setter Dependency Injection using Java Configuration
 		System.out.println(secondCollege.getScholarShipInfo());
 		
+		Dean dean = (Dean) annotationConfigApplicationContext.getBean("dean");
+		// Example of BeanFactoryPostProcessor using
+		System.out.println(dean.getDeanName());
+		
 		// Closing the context
 		annotationConfigApplicationContext.close();
 	}

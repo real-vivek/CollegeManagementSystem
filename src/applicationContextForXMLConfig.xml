@@ -39,10 +39,10 @@
 		<property name="deanName" value="${dean.name}"></property>
 	</bean>
 
-	<bean
+	<!-- <bean
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations" value="message.properties"></property>
 
-	</bean>
+	</bean> -->
 
 </beans>
